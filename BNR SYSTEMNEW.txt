@@ -1,0 +1,54 @@
+Create bundle line program and user files
+
+BCS PROGRAM
+1.  Create Program in PLC param editor for this BCS's serial number.
+2   Check out the new BCS program version
+3.  Copy latest BCS system to your local directory for the new BCS program
+4.  Remove unused programs from the configuration
+5.  Create the hardware tree
+6.  Freeze all hardware firmware versions
+7.  Set all hardware configurations to show all info and status items.
+8.  Change drive configurations based on motor size
+9.  Change BLC X67 block configuration to 4 inputs and 4 outputs
+10. Change QCR X67 blocks to counters to 6 ins and 2 outs
+11. Change X2X number of stations and baud rate 
+12. Create IO Mapping file using PLC param editor. Fix PLC Param editor code if any mistakes in file.
+13. Correct all constants in globalconst.var, autoconst.var, machineconst.var and machineautoconst.var
+14. Make sure error start/stop indexes match the error file, they should. If not, fix this in the master program
+15. Update BCS serial number version history file
+
+CREATE THE USER FOLDER
+1.  Import MachineParameter and IO type files into new BCS program and enter correct index bounds.
+2.  Create a user folder from the BCS that you copied from
+3.  Update the data in the new BCS program using the csv files uyou just created(just data)
+4.  Import the errors file
+5.  Create new user folder and copy default values into array indexes greater than 1(they will have no data)
+6.  Remove any IO or GPs that are not used
+7.  Reimport the data. Verify that there are no parameters in the text file that are not in the database(a message box will show this)
+8.  Verify that all parameters in the database that are not in the text file should not be in the text file.
+9.  Reimport data, this time use 'delete params not in database' option
+10. Remake csv files from database
+11. Correct digital input module/input number values
+12. Correct digital output module/input number values
+13. Correct analog input module/input number values
+14. Correct analog output module/input number values
+15. Correct machine parameter values
+16. Change max value column to show no decimal places in gp file
+17. Reimport data for all files
+18. Add ERRLOG folder to user folder
+19. Copy Help files to HELP folder in GMMCO folder
+
+TEST CODE
+1.  Create a flash disk for testing
+2.  Error check the serial number, # of zones, machine index, type index, line #, and drive #'s using the machine status menu
+3.  Check that the correct buttons appear on the Order Entry screen
+4.  Check the there is nothing unexpected in the program monitor
+5.  Check that all machines show up in the machine setup screen
+6.  Check that set up screens cycle through machines without issues
+
+COPY TO SERVER
+1.  Create a zp2 image file for the program
+2.  Copy user folder ot machines directory
+3.  Check in the BCS program(This copies the program to master programs directory)
+4.  Finalize and activate the program
+5.  Link program to serialized part and copy zp2 file to serialized part folder
