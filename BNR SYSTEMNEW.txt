@@ -54,3 +54,5 @@ COPY TO SERVER
 5.  Link program to serialized part and copy zp2 file to serialized part folder
 
 added line 1
+
+added for test
