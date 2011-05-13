@@ -52,3 +52,5 @@ COPY TO SERVER
 3.  Check in the BCS program(This copies the program to master programs directory)
 4.  Finalize and activate the program
 5.  Link program to serialized part and copy zp2 file to serialized part folder
+
+added line 1
